@@ -2,6 +2,9 @@ parameters:
     aws_sdk.class: Aws\Sdk
 
 services:
+    _defaults:
+        public: true
+
     aws_sdk:
         class: "%aws_sdk.class%"
         arguments:

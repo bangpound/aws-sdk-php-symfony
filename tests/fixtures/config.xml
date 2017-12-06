@@ -26,6 +26,8 @@
     </parameters>
 
     <services>
+        <defaults public="true" />
+
         <service id="a_service" class="Aws\Credentials\Credentials">
             <argument>a-different-fake-key</argument>
             <argument>a-different-fake-secret</argument>

@@ -17,6 +17,9 @@ aws:
         endpoint: https://search-with-some-subdomain.us-east-1.cloudsearch.amazonaws.com
 
 services:
+    _defaults:
+        public: true
+
     'Aws\DynamoDb\DynamoDbClient':
         class: Aws\DynamoDb\DynamoDbClient
         arguments:

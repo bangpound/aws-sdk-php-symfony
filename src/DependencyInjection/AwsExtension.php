@@ -39,7 +39,7 @@ class AwsExtension extends Extension
             $serviceDefinition = $this->createServiceDefinition($awsService);
             $container->setDefinition($serviceName, $serviceDefinition);
 
-            $container->setAlias($serviceDefinition->getClass(), $serviceName);
+            $container->setAlias($serviceDefinition->getClass(), $serviceName)->setPublic(true);
         }
     }
 
@@ -62,6 +62,8 @@ class AwsExtension extends Extension
                 ->setFactoryService('aws_sdk')
                 ->setFactoryMethod('create' . $name);
         }
+
+        $serviceDefinition->setPublic(true);
 
         return $serviceDefinition;
     }

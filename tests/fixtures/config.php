@@ -30,11 +30,13 @@ $container->loadFromExtension('aws', [
 
 $container
     ->register('a_service', 'Aws\\Credentials\\Credentials')
+    ->setPublic(true)
     ->addArgument('a-different-fake-key')
     ->addArgument('a-different-fake-secret');
 
 $container
     ->register(DynamoDbClient::class, DynamoDbClient::class)
+    ->setPublic(true)
     ->addArgument([
         'region' => 'eu-central-1',
         'version' => '2012-08-10',
